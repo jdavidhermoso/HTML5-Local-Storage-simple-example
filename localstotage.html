@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> Learning how to use  HTML5 localstorage</title>
+	<script type="text/javascript" src="localStorage.js"></script>
+</head>
+<body>
+	<article>
+		<h1> Learging how to use HTML5 localstorage </h1>
+
+		<p>
+			Local storage is useful to store locally much data using the web browser.
+			
+			People used to use cookies, but html5 local storage is better because it's more secure, it's faster retrieving data, and it's only used when is asked for it. 
+			In addition, retrieving the data doesn't affect to the performance of the website.
+
+			The data is stored in json notation (name/value).
+
+			You must to know a web page only can access data stored by itself.
+
+			As I said before, local storage limit is much larger than cookies. Cookies can save around 5MB.
+			And localstorage doesn't send data to the server.		
+		</p>
+
+	
+		<h2>
+			Local Storage objects
+		</h2>
+		<p>
+			HTML local storage provide us two objects for storing data on the browser.
+		</p>
+		
+		<dl>
+	    	<dt> 
+	    		<dfn>
+	    			window.localStorage 
+	    		</dfn> 
+	    	</dt>
+	    	<dd>
+	      		Stores data without expiration date.
+	      	</dd>
+
+	      	<dt> 
+	      		<dfn> 
+	      			code.sessionStorage 
+	      		</dfn> 
+	      	</dt>
+
+	      	<dd>
+	      		stores data for the current session. It means that data will be lost when you close the browser, or the tab.
+	      	</dd>
+	    </dl>
+
+
+	    As a first step, We'll check that browser supports localStorage and sessionStorage:
+	    <blockquote>
+	    	<code>
+	    		if(typeof(Storage) !== "undefined") {
+	    			// Code for localStorage/sessionStorage.
+				} else {
+	    			// Sorry! No Web Storage support..
+				}    		
+	    	
+	    	</code>
+	    </blockquote>
+	</article>
+
+	<article>
+	    <h3> localStorage object</h3>
+	    <p>
+	    	The localStorage object stores the data, and it hasn't no expiration date. 
+	    	The data won't be deleted if the user close the browser, or the tab.
+	    </p>
+
+	    <p>
+	    	Simple example:
+	    </p>
+
+	    <blockquote>
+	    	<code>
+	    		// Store the data.
+					localStorage.setItem("footballTeam", "Liverpool FC");
+				// Retrieve
+					localStorage.getItem("footballTeam");
+	    	</code>
+	    </blockquote>
+
+	    <p>
+	    	Let's try it!
+	    </p>
+		
+		<form>
+	    	<select id="selectTeam">
+	    		<option value="Liverpool FC">
+	    			Liverpool FC	    			
+	    		</option>
+
+	    		<option value="Manchester Utd.">
+	    			Manchester Utd.		
+	    		</option>
+
+	    		<option value="Brighton and Hove Albion FC">
+	    			Brighton and Hove Albion FC	    			
+	    		</option>
+	    	</select>
+
+	    	<input type="button" id="localStorageButton" value="Store!" />
+
+	    	<input type="button" id="retrieveLocalStorageButton" value="Show data!" />
+
+	    
+		</form>
+
+		<div id="team">
+
+		</div> 
+	</article>
+	<article>
+		<h3> Session Storage object</h3>
+		<p>
+			sessionStorage is just the same as localStorage, but it stores the date only during the session. If you close the browser, the date is deleted.
+		</p>
+
+		<form>
+	    	<select id="selectCity">
+	    		<option value="New Castle Upon Tyne">
+	    			New Castle Upon Tyne
+	    		</option>
+
+	    		<option value="London">
+	    			London
+	    		</option>
+
+	    		<option value="Brighton">
+	    			Brighton
+	    		</option>
+	    	</select>
+
+	    	<input type="button" id="sessionStorageButton" value="Store!" />
+
+	    	<input type="button" id="retrieveSessionStorageButton" value="Show data!" />
+
+	    
+		</form>
+
+		<div id="city">
+
+		</div> 
+	</article>
+
+	
+
+
+	
+</body>
+</html>
